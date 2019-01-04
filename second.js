@@ -137,14 +137,16 @@ s13.onclick=tanchu2;
 		}
 		bod1.onmousemove = function(ev){
 			var ev = ev||window.event;
+			var st =document.documentElement.scrollTop || document.body.scrollTop
 			var left = ev.clientX - bod1.offsetLeft - slider.offsetWidth/2;
 			var top = ev.clientY - bod1.offsetTop - slider.offsetHeight/2;
 			var maxLeft = bod1.offsetWidth - slider.offsetWidth;
-			var maxTop = bod1.offsetHeight - slider.offsetHeight;
+			var maxTop = bod1.offsetHeight - slider.offsetHeight-st;
 			left = left>maxLeft?maxLeft:left<0?0:left;
 			top = top>maxTop?maxTop:top<0?0:top;
-			slider.style.left = left+190+"px";
-			slider.style.top = top+227+"px";
+			
+			slider.style.left = left+bod1.offsetLeft+"px";
+			slider.style.top = top+bod1.offsetTop+st+"px";
 			var w = left/maxLeft;
 			var h = top/maxTop;
 			var BmaxLeft = img2.offsetWidth - Bimg.offsetWidth; 
