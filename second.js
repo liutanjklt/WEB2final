@@ -116,10 +116,10 @@ function tanchu2(){
 	sk12.style.display="none";
 	sk11.style.display="none";
 }
-s1.onclick = change;
+s1.onmouseover = change;
 s2.onclick = change1;
 s3.onclick = change;
-s4.onclick = change1;
+s4.onmouseover = change1;
 s5.onclick = change2;
 s7.onclick = change21;
 s11.onclick=tanchu;
